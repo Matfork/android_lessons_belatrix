@@ -15,12 +15,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Valor"
             android:ems="10"
             android:layout_alignTop="@+id/btnCalcularMes"
             android:layout_toLeftOf="@+id/btnCalcularMes"
             android:layout_toStartOf="@+id/btnCalcularMes"
-            android:id="@+id/txtFieldOne" />
+            android:id="@+id/txtFieldOne"
+            android:hint="Valor" />
 
         <Button
             android:text="Calcular Mes"
@@ -42,7 +42,8 @@
             android:layout_alignLeft="@+id/txtFieldOne"
             android:layout_alignStart="@+id/txtFieldOne"
             android:layout_marginTop="29dp"
-            android:id="@+id/txtViewOne" />
+            android:id="@+id/txtViewOne"
+            android:textStyle="normal|italic" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -58,15 +59,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Number 2"
                 android:ems="10"
                 android:id="@+id/txnNumber2"
                 android:layout_marginBottom="27dp"
                 android:layout_alignBottom="@+id/lblResultado"
-                android:layout_marginRight="86dp"
-                android:layout_marginEnd="86dp"
-                android:layout_toLeftOf="@+id/btnCalcular"
-                android:layout_toStartOf="@+id/btnCalcular" />
+                android:layout_toStartOf="@+id/btnCalcular"
+                android:hint="Number 2"
+                android:layout_alignRight="@+id/txtOperation"
+                android:layout_alignEnd="@+id/txtOperation" />
 
             <Button
                 android:text="Calcular"
@@ -87,25 +87,12 @@
                 android:layout_marginBottom="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Operation"
-                android:ems="10"
-                android:id="@+id/txtOperation"
-                android:layout_below="@+id/btnCalcular"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignRight="@+id/txnNumber2"
-                android:layout_alignEnd="@+id/txnNumber2" />
+                android:textStyle="normal|italic" />
 
             <EditText
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Number 1"
                 android:ems="10"
                 android:id="@+id/txtNumber1"
                 android:layout_width="wrap_content"
@@ -113,10 +100,9 @@
                 android:layout_above="@+id/txnNumber2"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignRight="@+id/txnNumber2"
-                android:layout_alignEnd="@+id/txnNumber2"
-                android:layout_marginRight="29dp"
-                android:layout_marginEnd="29dp" />
+                android:hint="Number 1"
+                android:layout_toLeftOf="@+id/btnNextActivity"
+                android:layout_toStartOf="@+id/btnNextActivity" />
 
             <Button
                 android:text="Go Next Page"
@@ -127,5 +113,16 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="13dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="135dp"
+                android:id="@+id/slOperator"
+                android:layout_toLeftOf="@+id/btnCalcular"
+                android:layout_toStartOf="@+id/btnCalcular" />
         </RelativeLayout>
 </RelativeLayout>

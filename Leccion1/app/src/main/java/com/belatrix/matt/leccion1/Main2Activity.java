@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
@@ -31,7 +33,7 @@ public class Main2Activity extends AppCompatActivity {
 
                 for (int i = 1; i <= txtFieldVal; i++){
                     TextView textView = new TextView(Main2Activity.this);
-                    textView.setText("Linea " + txtFieldVal);
+                    textView.setText("Linea " + i);
                     textView.setBackgroundColor(Color.parseColor("#FF0000"));
                     textView.setTextColor(Color.parseColor("#00FF00"));
                     linearLayoutContainer.addView(textView);

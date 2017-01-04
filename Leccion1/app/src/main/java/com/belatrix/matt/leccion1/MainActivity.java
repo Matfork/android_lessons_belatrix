@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -27,8 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         final EditText txtNumberOne = (EditText) findViewById(R.id.txtNumber1);
         final EditText txtNumberTwo = (EditText) findViewById(R.id.txnNumber2);
-        final EditText txtOperation = (EditText) findViewById(R.id.txtOperation);
         final TextView lblResultado = (TextView) findViewById(R.id.lblResultado);
+
+
+        final Spinner dropdown = (Spinner)findViewById(R.id.slOperator);
+        String[] items = new String[]{"+", "-", "*", "/"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
 
         buttonOne.setOnClickListener(new View.OnClickListener () {
             @Override
@@ -52,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         case 10: mes = "Octubre"; break;
                         case 11: mes = "Nomviembre"; break;
                         case 12: mes = "Diciembre"; break;
+                        default: mes = "Opcion Incorrecta"; break;
                     }
 
                     textView.setText(mes);
@@ -63,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Double n1 = Double.parseDouble(txtNumberOne.getText().toString());
                 Double n2 = Double.parseDouble(txtNumberTwo.getText().toString());
-                char op = txtOperation.getText().toString().charAt(0);
+                char op = dropdown.getSelectedItem().toString().charAt(0);
                 Double result = 0.0;
 
                 switch (op ){
@@ -71,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     case '-': result = n1 - n2; break;
                     case '*': result = n1 * n2; break;
                     case '/': result = n1 / n2; break;
+                    default: result = 0.0; break;
                 }
 
                 Log.d("result",""+result);
